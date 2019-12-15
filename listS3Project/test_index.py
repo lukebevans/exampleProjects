@@ -29,19 +29,6 @@ class TestS3List(unittest.TestCase):
         s3.put_object(Bucket=self.bucket1, Key=self.key1, Body=self.value1)
         s3.put_object(Bucket=self.bucket2, Key=self.key2, Body=self.value2)
 
-    """
-    @mock_s3
-    def test_listS3Buckets(self):
-
-        self.__moto_setup()
-
-        result = listS3Contents.listS3Buckets()
-        buckets = []
-        for b in result['Buckets']:
-            buckets.append(b['Bucket'])
-
-        self.assertTrue(self.bucket1 in buckets and self.bucket2 in buckets)
-    """
     @mock_s3
     def test_listObjects(self):
 
